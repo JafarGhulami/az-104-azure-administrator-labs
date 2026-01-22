@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ========== LOGIN ==========
+az login
+az account set --subscription "<SUBSCRIPTION_ID>"
+
 # ========== VARIABLES ==========
 RG_JP="rg-japanwest"
 RG_KR="rg-koreacentral"
