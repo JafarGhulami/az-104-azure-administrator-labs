@@ -27,5 +27,4 @@ The lab deploys a complete Azure environment using ARM Templates:
 ## Deployment
 ```bash
 az deployment group create \
-  --resource-group az104-lab-rg \
-  --template-file arm-templates/core-infrastructure.json
+  --resource-group Lab1-privateDNS-BetweenTwoSubnet.JASON
