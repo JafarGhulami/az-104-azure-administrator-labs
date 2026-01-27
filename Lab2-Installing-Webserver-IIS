@@ -1,1 +1,84 @@
+############################################################
+# Script Name : Deploy-IIS-WebServer.ps1
+# Purpose     : Install and configure IIS Web Server
+# OS          : Windows Server 2025 R2
+# Author      : Jafar
+############################################################
+
+# -------------------------------
+# Step 1: Install IIS Web Server
+# -------------------------------
+# This installs the IIS role along with management tools
+Install-WindowsFeature -Name Web-Server -IncludeManagementTools
+
+
+# -----------------------------------------
+# Step 2: Verify IIS Installation Status
+# -----------------------------------------
+# Checks if the Web Server role is installed successfully
+Get-WindowsFeature Web-Server
+
+
+# -------------------------------
+# Step 3: Start IIS Service
+# -------------------------------
+# Ensures the World Wide Web Publishing Service is running
+Start-Service W3SVC
+
+
+# --------------------------------
+# Step 4: Confirm IIS Service Status
+# --------------------------------
+# Displays the current status of the IIS service
+Get-Service W3SVC
+
+
+# ---------------------------------------
+# Step 5: Allow HTTP Traffic (Port 80)
+# ---------------------------------------
+# Creates a firewall rule to allow inbound HTTP traffic
+New-NetFirewallRule `
+    -Name "Allow-HTTP-Port-80" `
+    -DisplayName "Allow HTTP Port 80" `
+    -Protocol TCP `
+    -LocalPort 80 `
+    -Direction Inbound `
+    -Action Allow `
+    -Profile Any
+
+
+# ---------------------------------------
+# Step 6: Create a Custom Web Page
+# ---------------------------------------
+# Replaces the default IIS page with a custom HTML page
+$WebPageContent = @"
+<html>
+<head>
+    <title>Azure IIS Web Server</title>
+</head>
+<body style="font-family: Arial; text-align: center;">
+    <h1>Hello from Windows Server 2025 R2</h1>
+    <p>This IIS Web Server was deployed using PowerShell</p>
+    <p>Deployed by Jafar</p>
+</body>
+</html>
+"@
+
+# Writes the custom HTML content to the IIS default website directory
+Set-Content -Path "C:\inetpub\wwwroot\index.html" -Value $WebPageContent
+
+
+# ---------------------------------------
+# Step 7: Restart IIS to Apply Changes
+# ---------------------------------------
+# Restarts IIS services to ensure changes take effect
+iisreset
+
+
+# ---------------------------------------
+# Step 8: Display Completion Message
+# ---------------------------------------
+# Shows a confirmation message in the console
+Write-Host "IIS Web Server deployment completed successfully!" -ForegroundColor Green
+Write-Host "Access your website using: http://<Server-Public-IP>" -ForegroundColor Yellow
 
