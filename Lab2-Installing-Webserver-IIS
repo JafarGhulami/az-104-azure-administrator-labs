@@ -2,7 +2,7 @@
 # Script Name : Deploy-IIS-WebServer.ps1
 # Purpose     : Install and configure IIS Web Server
 # OS          : Windows Server 2025 R2
-# Author      : Jafar
+# Author      : Jafar Ghulami
 ############################################################
 
 # -------------------------------
