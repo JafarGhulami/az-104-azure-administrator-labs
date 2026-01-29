@@ -1,5 +1,6 @@
 #Last-Update: 1/17/26
 # AZ-104 Azure Administrator Labs
+#Author: Jafar Ghulami
 
 Hands-on Azure infrastructure labs designed to fully cover the
 Microsoft AZ-104 Azure Administrator exam objectives.
