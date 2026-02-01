@@ -3,7 +3,7 @@
 #Author: Jafar Ghulami
 
 Hands-on Azure infrastructure labs designed to fully cover the
-Microsoft AZ-104 Azure Administrator exam objectives.
+Microsoft AZ-104 Azure Administrator exam objectives.hh
 
 This project focuses on real-world Azure administration scenarios
 including networking, compute, storage, monitoring, and security.
