@@ -1,4 +1,5 @@
 #!/bin/bash
+#It's a test script
 
 # ========== LOGIN ==========
 az login
