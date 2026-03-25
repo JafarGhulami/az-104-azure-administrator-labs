@@ -12,6 +12,7 @@ RG_KR="rg-koreacentral"
 LOC_JP="japanwest"
 LOC_KR="koreacentral"
 
+
 VM1="VM1-Ubuntu"
 VM2="VM2-Ubuntu"
 
