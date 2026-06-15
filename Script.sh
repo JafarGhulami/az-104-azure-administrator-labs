@@ -1,7 +1,7 @@
 #!/bin/bash
 #It's a test script
 
-# ========== LOGIN ==========
+# ========== LOGIN ========== 
 az login
 az account set --subscription "<SUBSCRIPTION_ID>"
 
