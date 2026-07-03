@@ -1,5 +1,6 @@
 #!/bin/bash
 #It's a test script
+#please give me comments 
 
 # ========== LOGIN ========== 
 az login
